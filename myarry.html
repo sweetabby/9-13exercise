@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//创建数组
+//    let arr=new myArray('a','b','c',1,2,3);
+//    function myArray(){
+//   	for(let i=0;i<arguments.length;i++){
+//   		this[i]=arguments[i];
+//   	}
+//   	this.length=arguments.length;
+
+// //push
+//     this.push=function(){
+//   	for(let i=0;i<arguments.length;i++){
+//   		this[this.length]=arguments[i];
+//   		this.length++;
+//   	}
+//   }
+// //map
+//  this.map=function(fn){
+//     let newarr=new myArray();
+//     for(let i=0;i<this.length;i++){
+//     	newarr.push(fn(this[i]));
+//     }
+//     return newarr;
+//  }	
+// }
+// //delnull
+//   this.delnull=function(value){
+//   	let newarr=new myArray();
+//   	for(let i=0;i<this.length;i++){
+//        if(this[])
+//   	}
+//   }
+//9-13prototype
+  // function person(){
+  // 	this.name='name';
+  // 	this.age=20;
+  // }
+  // person.prototype={
+  // 	sleep:function(){
+  // 		alert('休息');
+  // 	},
+  //   say:function(){
+  //   	alert('说话');
+  //   },
+  // }
+ 
+  // person.prototype.eat=function(){
+  //      alert('吃饭');
+  // }
+  // let zhangsan=new person();
+  // zhangsan.name="zhangsan";
+  // zhangsan.sleep();
+  // zhangsan.eat();
+  // console.log(zhangsan);
+//9-13继承
+ // function Person(){
+ //  this.name='person';
+ //  this.age=20;
+ //  this.say=function(){
+ // 	alert('说话');
+ // }
+ //  Person.prototype.aa=function(){
+ // 	alert('aa');
+ //  }
+ // }
+ //或者
+ //Person.prototype={
+ //   aa:function(value){
+ //      alert('aa'); 
+ //     }
+ //   }
+
+ // function Student(){
+ //  this.name='student';
+ //  this.class=1;
+ //  this.num=1240;
+ //  this.skill=function(){
+ // 	alert('work');
+ // }
+ // Student.prototype.bb=function(){
+ // 	alert('bb');
+ //  }
+ // } 
+
+ // let zhangsan=new Person();
+ // console.log(zhangsan);
+ // // zhangsan.say();
+ // Student.prototype=new Person();
+ // let lisi=new Student();
+ // console.log(lisi.age);
+ // console.log(lisi);
+ // console.log(lisi.__proto__==Student.prototype);
+ // console.log(Student.prototype.__proto__==Person.prototype);
+ // console.log(Person.prototype.__proto__==Object.prototype);
+ // console.log(Object.prototype.__proto__==null);
+ // // lisi.skill();
+//9-13str对象 
+  // let str='a,b,c';
+  // let char1=str.charAt(2);
+  // console.log(char1);
+  // let char2=str.charCodeAt(2);
+  // console.log(char2);
+  // let char3=String.fromCharCode(98);
+  // console.log(char3);
+  // let str='abcdabcd';
+  // let index=str.indexOf('abcd');  //首次出现
+  // let index1=str.lastIndexOf('abcd');  //最后一次出现
+  // console.log(index);
+  // console.log(index1);
+  // let include=str.includes('abf');  //是否存在
+  //  console.log(include);
+//9-13 截取
+   // let str='abcdabcd';
+   // let str1=str.slice(2,4);
+   // console.log(str1);
+   // let str2=str.substring(2,4);
+   // console.log(str2);
+   // let str3=str.substr(2,4);
+   // console.log(str3);
+    // let str4 = str.replace('abcd','****');
+    // console.log(str4);
+//9-13替换
+    // let str='abcdabcd';
+    // let result=replaceAll(str,'c');
+    // function replaceAll(str,rstr){
+    // 	// let star='';                      //重复替换
+    // 	// for(let i=0;i<rstr.length;i++){
+    // 	// 	star+='*';
+    // 	// }
+    //    let star='*'.repeat(rstr.length);    //重复替换
+    //    while(str.includes(rstr)){
+    //    	  str=str.replace(rstr,star);
+    //    }
+    //    return str;
+    // }
+    // console.log(result);
+//9-13match
+     // let str='abcdabcd';
+     // let result=str.match('ab');
+     // console.log(result);
+//9-13trim
+     // let str='  abcdabcd  ';
+     // let result=str.trim();
+     // console.log(str);
+     // console.log(result);
+//9-13split拆分
+      // let str='a b c d';
+      // let str1='CFSCV';
+      // let arr=str.split(' ',4);
+      // console.log(arr);
+      // console.log(str.toUpperCase());
+      // console.log(str1.toLowerCase());
+      // document.write(str.fontcolor('red'));
+      // document.write(str.fontsize(7));
+//9-13位置
+   let url='https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/';
+   let pos=position(url,'baidu');
+   function position(str,rstr){
+   	  let arr=[];
+   	  let star='*'.repeat(rstr.length);
+      while(str.includes(rstr)){
+      	arr.push(str.indexOf(rstr));
+        str=str.replace(rstr,star);
+      }
+      return arr;
+   }
+    console.log(pos); 
+//9-13位置2
+    let url1='https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/';
+    let pos1=position(url1,'baidu');
+    function position(str,rstr){
+    	let arr=[];
+    	let star='*'.repeat(rstr.length);
+    	for(i=0;i<str.length;i++){
+    		if(rstr==str.slice(i,i+5)){
+              arr.push(str.indexOf(rstr));
+              str=str.replace(rstr,star);
+    		}
+    	}
+    	return arr;
+    }
+    console.log(pos1);  
+  
+
+
+
+
+
+
+
+
+
+ // let result=arr.map(function(value){
+ // 	return value*2;
+ // });
+ // console.log(result);
+    
+
+
+
+
+
+
+
+
+
+
+
+</script>
+	
+</body>
+</html>
